@@ -1,0 +1,16 @@
+[
+  {
+    "id": "grace-first-step",
+    "title": "The First Step",
+    "category": "site_of_grace",
+    "description": "First Site of Grace upon entering Limgrave.",
+    "coords": [-7000, 7500]
+  },
+  {
+    "id": "boss-tree-sentinel",
+    "title": "Tree Sentinel",
+    "category": "boss",
+    "description": "Patrolling the road past The First Step.",
+    "coords": [-7100, 7550]
+  }
+]
