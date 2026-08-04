@@ -6,11 +6,9 @@ function Debug() {
   const map = useMap();
 
   useEffect(() => {
-    console.log("Zoom:", map.getZoom());
-    console.log("Center:", map.getCenter());
-    console.log("Pixel Bounds:", map.getPixelBounds());
-    console.log("Pixel Origin:", map.getPixelOrigin());
-  }, [map]);
+    (window as any).map = map;
+    console.log("Map is available")
+  },[map]);
 
   return null;
 }
