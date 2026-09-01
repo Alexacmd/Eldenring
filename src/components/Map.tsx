@@ -1,23 +1,12 @@
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
-import { useEffect } from "react";
+import { MapContainer, TileLayer} from "react-leaflet";
 import L from "leaflet";
-
-function Debug() {
-  const map = useMap();
-
-  useEffect(() => {
-    (window as any).map = map;
-    console.log("Map is available")
-  },[map]);
-
-  return null;
-}
+import Debug from "./Debug";
 
 export default function Map() {
   return (
     <MapContainer
       crs={L.CRS.Simple}
-      center={[78, 78]}
+      center={[100, 100]}
       zoom={0}
       minZoom={0}
       maxZoom={5}

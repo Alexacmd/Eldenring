@@ -5,14 +5,14 @@ html, body, #root {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #0a0a0a;
+  background-color: #000000;
 }
 
 /* Ensure Leaflet tiles render inside container bounds */
 .leaflet-container {
   width: 100vw;
   height: 100vh;
-  background: #0a0a0a !important;
+  background: #000000 !important;
 }
 
 .leaflet-tile-container img {
