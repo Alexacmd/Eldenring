@@ -1,50 +1,47 @@
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import {Marker as LeafletMarker} from "react-leaflet"
+import { MarkerData } from "../types/marker"
+import L from "leaflet";
 
-// Fix Leaflet's missing icon bug in Vite
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconUrl: markerIcon,
-  iconRetinaUrl: markerIcon2x,
-  shadowUrl: markerShadow,
-});
-
-import React from 'react';
-import { Marker as LeafletMarker } from 'react-leaflet';
-import L from 'leaflet';
-import { MarkerData } from '../types/marker';
-import { Popup } from './Popup';
-
-// Simple default icon fallback using Leaflet CDN assets
-const defaultIcon = L.icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-});
-
-interface MarkerProps {
-  data: MarkerData;
-  isCompleted: boolean;
-  onToggleComplete: (id: string) => void;
+interface MarkerProps{
+  data:MarkerData;
 }
 
-export const Marker: React.FC<MarkerProps> = ({
-  data,
-  isCompleted,
-  onToggleComplete,
-}) => {
-  return (
-    <LeafletMarker
-      position={data.coords}
-      icon={defaultIcon}
-      opacity={isCompleted ? 0.4 : 1.0} // Dims completed markers
-    >
-      <Popup
-        marker={data}
-        isCompleted={isCompleted}
-        onToggleComplete={onToggleComplete}
-      />
-    </LeafletMarker>
-  );
+const icons = {
+  boss: L.icon({
+    iconUrl:"icons/map_cursor_02/icon_29.png",
+    iconSize:[32,32],
+  }),
+
+  site_of_grace: L.icon({
+    iconUrl: "icons/map_cursor_02/icon_8.png",
+    iconSize: [32,32],
+  }),
+    item: L.icon({
+    iconUrl: "/icons/item.png",
+    iconSize: [32, 32],
+  }),
+
+  dungeon: L.icon({
+    iconUrl: "/icons/dungeon.png",
+    iconSize: [32, 32],
+  }),
+
+  npc: L.icon({
+    iconUrl: "/icons/npc.png",
+    iconSize: [32, 32],
+  }),
+
+  golden_seed: L.icon({
+    iconUrl: "/icons/golden-seed.png",
+    iconSize: [32, 32],
+  }),
 };
+
+export default function Marker({data}: MarkerProps){
+  return(
+    <LeafletMarker 
+    position={data.coords}
+    icon= {icons[data.category]}
+    />
+  );
+}

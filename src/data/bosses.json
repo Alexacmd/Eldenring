@@ -1,9 +1,16 @@
 [
   {
-    "id": "boss-tree-sentinel",
+    "id": "boss-1",
     "title": "Tree Sentinel",
     "category": "boss",
-    "description": "Patrolling the road past The First Step.",
-    "coords": [-705, -378]
+    "description": "AAA",
+    "coords": [-356.80043926943335, 183.2819326388815]
+  },
+  {
+    "id": "boss-2",
+    "title": "Margit",
+    "category": "boss",
+    "description": "AAA",
+    "coords": [-180, 250]
   }
 ]

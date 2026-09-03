@@ -7,4 +7,6 @@ __pycache__/
 
 .env
 
-public/tiles/
+public/tiles
+
+icons/
